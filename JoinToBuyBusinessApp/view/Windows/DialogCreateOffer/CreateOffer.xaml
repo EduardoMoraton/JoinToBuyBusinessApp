@@ -1,0 +1,104 @@
+﻿<Window x:Class="JoinToBuyBusinessApp.view.Windows.DialogCreateOffer.CreateOffer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoinToBuyBusinessApp.view.Windows.DialogCreateOffer"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="CreateOffer" Height="550" Width="800" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid Margin="0,0,0,-19">
+        <StackPanel Margin="20px">
+            <TextBox
+                Text="{Binding Path=CurrOffer.Title}"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="Tittle"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                Text="{Binding Path=CurrOffer.Details}"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="Details"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20px">
+                    <TextBlock VerticalAlignment="Center">
+                        Quantity
+                    </TextBlock>
+                    <TextBox
+                Text="{Binding Path=Quantity}"
+                        Width="50px"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="Quantity"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" FontSize="24">
+                    X
+                </TextBlock>
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20px">
+                    <TextBlock VerticalAlignment="Center">
+                        price
+                    </TextBlock>
+                    <TextBox
+                Text="{Binding Path=CurrItem.Price}"
+                        Width="50px"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="Price"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" FontSize="24">
+                    =
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20px">
+                    <TextBlock VerticalAlignment="Center">
+                        Old price
+                    </TextBlock>
+                    <TextBox
+                Text="{Binding Path=CurrOffer.OldPrice}"
+                        Width="50px"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="OldPrice"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" FontSize="24">
+                    Discount:
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20px">
+                    <TextBlock VerticalAlignment="Center">
+                        New Price
+                    </TextBlock>
+                    <TextBox
+                Text="{Binding Path=CurrOffer.NewPrice}"
+                        Width="50px"
+              VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="New Price"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button
+          
+          Command="{Binding CalculateCommand}"
+          IsDefault="True"
+          Content="Calculate"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignFlatLightButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="195,173,488,216" />
+        <Button
+          Click="Button_Click"
+          Command="{Binding LoginCommand}"
+          IsDefault="True"
+          Width="100px"
+          Content="Create"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignRaisedLightButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="90,223,604,266" />
+        <Button
+          IsCancel="True"
+          Width="100px"
+          Content="Exit"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+          ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="532,234,162,255" RenderTransformOrigin="0.313,-0.154" />
+    </Grid>
+</Window>

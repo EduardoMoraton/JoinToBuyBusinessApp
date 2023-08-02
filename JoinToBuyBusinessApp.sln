@@ -5,16 +5,20 @@ VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoinToBuyBusinessApp", "JoinToBuyBusinessApp\JoinToBuyBusinessApp.csproj", "{E96408F3-EFB5-4710-A270-B02C76BE40F1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "JoinToBuySetup", "JoinToBuySetup\JoinToBuySetup.vdproj", "{485CB08C-9536-42D3-B9FD-C9A3FAA9A825}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E96408F3-EFB5-4710-A270-B02C76BE40F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485CB08C-9536-42D3-B9FD-C9A3FAA9A825}.Debug|Any CPU.ActiveCfg = Release
+		{485CB08C-9536-42D3-B9FD-C9A3FAA9A825}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

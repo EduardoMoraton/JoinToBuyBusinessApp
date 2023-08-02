@@ -3,10 +3,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:JoinToBuyBusinessApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="JoinToBuyAPP" Height="700" Width="1000" Icon="assets/LOGO_SMALL_DESKTOP.ico" >
+    <Window.Resources>
+    </Window.Resources>
+    <DockPanel >
+        <materialDesign:Card DockPanel.Dock="Left" Width="100">
+            <DockPanel LastChildFill="False">
+                
+                <Button Height="50"  DockPanel.Dock="Top" materialDesign:RippleAssist.Feedback="#FF553293" Background="White" Style="{StaticResource MaterialDesignFlatLightButton}"
+                        Command="{Binding ItemsCommand}">
+                    <StackPanel Width="auto" Height="auto">
+                        <materialDesign:PackIcon
+                                    Width="24"
+                                    Height="24"
+                                    HorizontalAlignment="Center"
+                                    Kind="Warehouse" Foreground="#FF909090" />
+                        <TextBlock 
+                                HorizontalAlignment="Center"
+                                Text="Items" Foreground="#FF909090" />
+                    </StackPanel>
+                </Button>
+                <Button Height="50"  DockPanel.Dock="Top" materialDesign:RippleAssist.Feedback="#FF553293" Background="White" Style="{StaticResource MaterialDesignFlatLightButton}"
+                        Command="{Binding OffersCommand}"
+                        >
+                    <StackPanel Width="auto" Height="auto">
+                        <materialDesign:PackIcon
+                                    Width="24"
+                                    Height="24"
+                                    HorizontalAlignment="Center"
+                                    Kind="LocalOffer" Foreground="#FF909090" />
+                        <TextBlock 
+                                HorizontalAlignment="Center"
+                                Text="Offers" Foreground="#FF909090" />
+                    </StackPanel>
+                </Button>
+                <Button Height="50"  DockPanel.Dock="Top" materialDesign:RippleAssist.Feedback="#FF553293" Background="White" Style="{StaticResource MaterialDesignFlatLightButton}"
+                        Command="{Binding SentCommand}">
+                    <StackPanel Width="auto" Height="auto">
+                        <materialDesign:PackIcon
+                                    Width="24"
+                                    Height="24"
+                                    HorizontalAlignment="Center"
+                                    Kind="Truck" Foreground="#FF909090" />
+                        <TextBlock 
+                                HorizontalAlignment="Center"
+                                Text="Sent" Foreground="#FF909090" />
+                    </StackPanel>
+                </Button>
+                
+            </DockPanel>
+
+        </materialDesign:Card>
+        <ContentControl Content="{Binding CurrUserControl}">
+            
+        </ContentControl>
+    </DockPanel>
+
 </Window>

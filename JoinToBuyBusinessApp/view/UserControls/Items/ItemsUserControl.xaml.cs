@@ -13,19 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JoinToBuyBusinessApp
+namespace JoinToBuyBusinessApp.view.UserControls.Items
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para ItemsUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ItemsUserControl : UserControl
     {
-        MainWindowVM vm;
-        public MainWindow()
+
+        ItemsUserControlVM vm;
+        public ItemsUserControl()
         {
             InitializeComponent();
-            vm = new MainWindowVM();
-            DataContext = vm;
+            vm = new ItemsUserControlVM();
+            this.DataContext = vm;
         }
     }
 }

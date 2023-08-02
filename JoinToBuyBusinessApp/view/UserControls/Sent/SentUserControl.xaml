@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="JoinToBuyBusinessApp.view.UserControls.Sent.SentUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:JoinToBuyBusinessApp.view.UserControls.Offers"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <materialDesign:Card
+          DockPanel.Dock="Top"
+          Height="50"
+          Background="#CDB3F5"
+          Foreground="{DynamicResource PrimaryHueLightForegroundBrush}">
+            <Button
+                    Margin="5"
+                    Command="{Binding RefreshCommand}"
+                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                  ToolTip="Refresh"
+                HorizontalAlignment="Right">
+                <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Kind="Refresh" />
+            </Button>
+        </materialDesign:Card>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="533*"></ColumnDefinition>
+                <ColumnDefinition Width="233*"></ColumnDefinition>
+                <ColumnDefinition Width="34"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid
+                
+          CanUserAddRows="False"
+            CanUserResizeColumns="True"
+            IsReadOnly="True"
+            SelectedItem="{Binding CurrOffer}"
+          ItemsSource="{Binding OfferList}"
+          SelectionMode="Single"
+          SelectionUnit="FullRow" />
+
+            <DockPanel Grid.Column="1" Grid.ColumnSpan="2">
+                <DataGrid DockPanel.Dock="Top"
+                Height="270"
+          CanUserAddRows="False"
+            CanUserResizeColumns="True"
+            IsReadOnly="True"
+            SelectedItem="{Binding Path=CurrGroup}"
+          ItemsSource="{Binding  Path=CurrOffer.UsrGroupsCollection}"
+          SelectionMode="Single"
+          SelectionUnit="FullRow" />
+                
+                <materialDesign:Card DockPanel.Dock="Bottom"
+          Height="50"
+          Background="#CDB3F5"
+          Foreground="{DynamicResource PrimaryHueLightForegroundBrush}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        
+
+                        <Button
+                    Margin="5"
+                    Command="{Binding GetQRCommand}"
+                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                  ToolTip="Apply"
+                HorizontalAlignment="Right">
+
+                            <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Kind="Qrcode" />
+                        </Button>
+                    </StackPanel>
+
+
+                </materialDesign:Card>
+                <DockPanel>
+                    
+
+                    
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+
+
+
+    </DockPanel>
+</UserControl>

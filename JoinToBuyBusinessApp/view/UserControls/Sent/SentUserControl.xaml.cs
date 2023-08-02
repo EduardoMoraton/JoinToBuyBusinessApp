@@ -13,19 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JoinToBuyBusinessApp
+namespace JoinToBuyBusinessApp.view.UserControls.Sent
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para SentUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SentUserControl : UserControl
     {
-        MainWindowVM vm;
-        public MainWindow()
+        private SentUserControlVM vm;
+        public SentUserControl()
         {
             InitializeComponent();
-            vm = new MainWindowVM();
-            DataContext = vm;
+            vm = new SentUserControlVM();
+            this.DataContext = vm;
         }
     }
 }

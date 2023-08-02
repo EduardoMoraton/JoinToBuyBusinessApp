@@ -13,19 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JoinToBuyBusinessApp
+namespace JoinToBuyBusinessApp.view.UserControls.Offers
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para OffersUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OffersUserControl : UserControl
     {
-        MainWindowVM vm;
-        public MainWindow()
+        private OffersUserControlVM vm;
+        public OffersUserControl()
         {
             InitializeComponent();
-            vm = new MainWindowVM();
-            DataContext = vm;
+            vm = new OffersUserControlVM();
+            this.DataContext = vm;
         }
     }
 }
